@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		8D097EDE263E708600DF27FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D320EF3263E631F00B0E0E9 /* Assets.xcassets */; };
 		8D097EE3263E725F00DF27FA /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D097EE2263E725F00DF27FA /* CollectionCell.swift */; };
+		8D097EED263E75FC00DF27FA /* PropertyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D097EEC263E75FC00DF27FA /* PropertyView.swift */; };
+		8D097EF4263E792D00DF27FA /* DesignText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D097EF3263E792D00DF27FA /* DesignText.swift */; };
+		8D097EF8263E79E700DF27FA /* UIKit+DesignText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D097EF7263E79E700DF27FA /* UIKit+DesignText.swift */; };
+		8D097EFD263E833C00DF27FA /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D097EFC263E833C00DF27FA /* Array+Extension.swift */; };
 		8D320EEB263E631F00B0E0E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D320EEA263E631F00B0E0E9 /* AppDelegate.swift */; };
 		8D320EF4263E631F00B0E0E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D320EF3263E631F00B0E0E9 /* Assets.xcassets */; };
 		8D320EF7263E631F00B0E0E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D320EF5263E631F00B0E0E9 /* LaunchScreen.storyboard */; };
@@ -30,6 +34,10 @@
 
 /* Begin PBXFileReference section */
 		8D097EE2263E725F00DF27FA /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
+		8D097EEC263E75FC00DF27FA /* PropertyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyView.swift; sourceTree = "<group>"; };
+		8D097EF3263E792D00DF27FA /* DesignText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignText.swift; sourceTree = "<group>"; };
+		8D097EF7263E79E700DF27FA /* UIKit+DesignText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIKit+DesignText.swift"; sourceTree = "<group>"; };
+		8D097EFC263E833C00DF27FA /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		8D320EE7263E631F00B0E0E9 /* HouseMarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HouseMarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D320EEA263E631F00B0E0E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D320EF3263E631F00B0E0E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -64,9 +72,27 @@
 		8D097EE1263E725200DF27FA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8D097EEC263E75FC00DF27FA /* PropertyView.swift */,
 				8D097EE2263E725F00DF27FA /* CollectionCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		8D097EF2263E791200DF27FA /* Typography */ = {
+			isa = PBXGroup;
+			children = (
+				8D097EF3263E792D00DF27FA /* DesignText.swift */,
+				8D097EF7263E79E700DF27FA /* UIKit+DesignText.swift */,
+			);
+			path = Typography;
+			sourceTree = "<group>";
+		};
+		8D097EFB263E832F00DF27FA /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				8D097EFC263E833C00DF27FA /* Array+Extension.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		8D320EDE263E631F00B0E0E9 = {
@@ -103,6 +129,7 @@
 			children = (
 				8D320EEA263E631F00B0E0E9 /* AppDelegate.swift */,
 				8D097EE1263E725200DF27FA /* Views */,
+				8D097EFB263E832F00DF27FA /* Utils */,
 				8D3BC304263E69BF00691327 /* DesignSystem */,
 				8D320F03263E63A000B0E0E9 /* Modules */,
 			);
@@ -128,6 +155,7 @@
 		8D3BC304263E69BF00691327 /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
+				8D097EF2263E791200DF27FA /* Typography */,
 				8D3BC305263E69C900691327 /* Colors */,
 			);
 			path = DesignSystem;
@@ -252,8 +280,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D3BC30A263E6AD000691327 /* UIKit+DesignColor.swift in Sources */,
+				8D097EFD263E833C00DF27FA /* Array+Extension.swift in Sources */,
+				8D097EF8263E79E700DF27FA /* UIKit+DesignText.swift in Sources */,
+				8D097EF4263E792D00DF27FA /* DesignText.swift in Sources */,
 				8D3BC307263E69DC00691327 /* DesignColor.swift in Sources */,
 				8D320EEB263E631F00B0E0E9 /* AppDelegate.swift in Sources */,
+				8D097EED263E75FC00DF27FA /* PropertyView.swift in Sources */,
 				8D3BC301263E662B00691327 /* PropertyListViewController.swift in Sources */,
 				8D097EE3263E725F00DF27FA /* CollectionCell.swift in Sources */,
 			);

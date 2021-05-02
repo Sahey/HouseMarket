@@ -41,26 +41,11 @@ final class ColumnFlowLayout: UICollectionViewFlowLayout {
     }
 }
 
-final class SampleView: UIView {
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setup()
-    }
-
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-    }
-
-    private func setup() {
-        backgroundColor = .blue
-    }
-}
-
 final class PropertyListViewController: UIViewController {
     private var flowLayout: ColumnFlowLayout!
     private var collectionView: UICollectionView!
 
-    private typealias Cell = CollectionCell<SampleView>
+    private typealias PropertyCell = CollectionCell<PropertyView>
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,18 +53,18 @@ final class PropertyListViewController: UIViewController {
     }
 
     private func setup() {
-        view.backgroundColor = .designColor(.background(style: .primary))
-        flowLayout = ColumnFlowLayout(height: 100)
+        view.backgroundColor = .design(.background(style: .primary))
+        flowLayout = ColumnFlowLayout(height: 180)
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: flowLayout)
         collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-        collectionView.backgroundColor = .designColor(.background(style: .primary))
+        collectionView.backgroundColor = .design(.background(style: .primary))
         collectionView.alwaysBounceVertical = true
         view.addSubview(collectionView)
 
         collectionView.dataSource = self
         collectionView.delegate = self
 
-        collectionView.register(Cell.self, forCellWithReuseIdentifier: "Cell")
+        collectionView.register(PropertyCell.self, forCellWithReuseIdentifier: "PropertyCell")
     }
 }
 
@@ -89,7 +74,22 @@ extension PropertyListViewController: UICollectionViewDataSource, UICollectionVi
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PropertyCell", for: indexPath)
+        if let propertyCell = cell as? PropertyCell {
+            propertyCell.view.configure(
+                viewModel: PropertyViewModel(
+                    id: 1,
+                    imageUrl: nil,
+                    isPremium: indexPath.row % 2 == 0,
+                    address: "Mockvägen 1",
+                    municipality: "Gällivare kommun",
+                    price: "2 650 000 kr",
+                    livingArea: "49,5 m",
+                    numberOfRooms: "2 rum",
+                    daysPosted: "1 dagar"
+                )
+            )
+        }
         return cell
     }
 }

@@ -8,7 +8,7 @@
 import UIKit
 
 public extension UIColor {
-    static func designColor(_ style: DesignColor) -> UIColor {
+    static func design(_ style: DesignColor) -> UIColor {
         switch style {
         case let .background(style):
             return UIColor(named: style.description)!
