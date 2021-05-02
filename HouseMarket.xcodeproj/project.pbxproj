@@ -7,23 +7,49 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D097EDE263E708600DF27FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D320EF3263E631F00B0E0E9 /* Assets.xcassets */; };
 		8D320EEB263E631F00B0E0E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D320EEA263E631F00B0E0E9 /* AppDelegate.swift */; };
-		8D320EEF263E631F00B0E0E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D320EEE263E631F00B0E0E9 /* ViewController.swift */; };
 		8D320EF4263E631F00B0E0E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D320EF3263E631F00B0E0E9 /* Assets.xcassets */; };
 		8D320EF7263E631F00B0E0E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D320EF5263E631F00B0E0E9 /* LaunchScreen.storyboard */; };
+		8D3BC301263E662B00691327 /* PropertyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3BC300263E662B00691327 /* PropertyListViewController.swift */; };
+		8D3BC307263E69DC00691327 /* DesignColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3BC306263E69DC00691327 /* DesignColor.swift */; };
+		8D3BC30A263E6AD000691327 /* UIKit+DesignColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3BC309263E6AD000691327 /* UIKit+DesignColor.swift */; };
+		8D3BC314263E6F6100691327 /* DesignColorsUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3BC313263E6F6100691327 /* DesignColorsUnitTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8D3BC316263E6F6100691327 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8D320EDF263E631F00B0E0E9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D320EE6263E631F00B0E0E9;
+			remoteInfo = HouseMarket;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		8D320EE7263E631F00B0E0E9 /* HouseMarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HouseMarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D320EEA263E631F00B0E0E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8D320EEE263E631F00B0E0E9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8D320EF3263E631F00B0E0E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8D320EF6263E631F00B0E0E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8D320EF8263E631F00B0E0E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D3BC300263E662B00691327 /* PropertyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyListViewController.swift; sourceTree = "<group>"; };
+		8D3BC306263E69DC00691327 /* DesignColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignColor.swift; sourceTree = "<group>"; };
+		8D3BC309263E6AD000691327 /* UIKit+DesignColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIKit+DesignColor.swift"; sourceTree = "<group>"; };
+		8D3BC311263E6F6100691327 /* HouseMarketUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HouseMarketUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D3BC313263E6F6100691327 /* DesignColorsUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignColorsUnitTests.swift; sourceTree = "<group>"; };
+		8D3BC315263E6F6100691327 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		8D320EE4263E631F00B0E0E9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D3BC30E263E6F6100691327 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -37,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				8D320EE9263E631F00B0E0E9 /* HouseMarket */,
+				8D3BC312263E6F6100691327 /* HouseMarketUnitTests */,
 				8D320EE8263E631F00B0E0E9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -45,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				8D320EE7263E631F00B0E0E9 /* HouseMarket.app */,
+				8D3BC311263E6F6100691327 /* HouseMarketUnitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -63,6 +91,7 @@
 		8D320F02263E639800B0E0E9 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				8D3BC304263E69BF00691327 /* DesignSystem */,
 				8D320EEA263E631F00B0E0E9 /* AppDelegate.swift */,
 				8D320F03263E63A000B0E0E9 /* Modules */,
 			);
@@ -72,9 +101,43 @@
 		8D320F03263E63A000B0E0E9 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				8D320EEE263E631F00B0E0E9 /* ViewController.swift */,
+				8D3BC2FF263E65D500691327 /* PropertyList */,
 			);
 			path = Modules;
+			sourceTree = "<group>";
+		};
+		8D3BC2FF263E65D500691327 /* PropertyList */ = {
+			isa = PBXGroup;
+			children = (
+				8D3BC300263E662B00691327 /* PropertyListViewController.swift */,
+			);
+			path = PropertyList;
+			sourceTree = "<group>";
+		};
+		8D3BC304263E69BF00691327 /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				8D3BC305263E69C900691327 /* Colors */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		8D3BC305263E69C900691327 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				8D3BC306263E69DC00691327 /* DesignColor.swift */,
+				8D3BC309263E6AD000691327 /* UIKit+DesignColor.swift */,
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
+		8D3BC312263E6F6100691327 /* HouseMarketUnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				8D3BC313263E6F6100691327 /* DesignColorsUnitTests.swift */,
+				8D3BC315263E6F6100691327 /* Info.plist */,
+			);
+			path = HouseMarketUnitTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -97,6 +160,24 @@
 			productReference = 8D320EE7263E631F00B0E0E9 /* HouseMarket.app */;
 			productType = "com.apple.product-type.application";
 		};
+		8D3BC310263E6F6100691327 /* HouseMarketUnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8D3BC318263E6F6100691327 /* Build configuration list for PBXNativeTarget "HouseMarketUnitTests" */;
+			buildPhases = (
+				8D3BC30D263E6F6100691327 /* Sources */,
+				8D3BC30E263E6F6100691327 /* Frameworks */,
+				8D3BC30F263E6F6100691327 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8D3BC317263E6F6100691327 /* PBXTargetDependency */,
+			);
+			name = HouseMarketUnitTests;
+			productName = HouseMarketUnitTests;
+			productReference = 8D3BC311263E6F6100691327 /* HouseMarketUnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -108,6 +189,10 @@
 				TargetAttributes = {
 					8D320EE6263E631F00B0E0E9 = {
 						CreatedOnToolsVersion = 12.4;
+					};
+					8D3BC310263E6F6100691327 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 8D320EE6263E631F00B0E0E9;
 					};
 				};
 			};
@@ -125,6 +210,7 @@
 			projectRoot = "";
 			targets = (
 				8D320EE6263E631F00B0E0E9 /* HouseMarket */,
+				8D3BC310263E6F6100691327 /* HouseMarketUnitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -139,6 +225,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8D3BC30F263E6F6100691327 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D097EDE263E708600DF27FA /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -146,12 +240,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D320EEF263E631F00B0E0E9 /* ViewController.swift in Sources */,
+				8D3BC30A263E6AD000691327 /* UIKit+DesignColor.swift in Sources */,
+				8D3BC307263E69DC00691327 /* DesignColor.swift in Sources */,
 				8D320EEB263E631F00B0E0E9 /* AppDelegate.swift in Sources */,
+				8D3BC301263E662B00691327 /* PropertyListViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D3BC30D263E6F6100691327 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D3BC314263E6F6100691327 /* DesignColorsUnitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8D3BC317263E6F6100691327 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8D320EE6263E631F00B0E0E9 /* HouseMarket */;
+			targetProxy = 8D3BC316263E6F6100691327 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		8D320EF5263E631F00B0E0E9 /* LaunchScreen.storyboard */ = {
@@ -319,6 +431,44 @@
 			};
 			name = Release;
 		};
+		8D3BC319263E6F6100691327 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = HouseMarketUnitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Sahey.HouseMarketUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HouseMarket.app/HouseMarket";
+			};
+			name = Debug;
+		};
+		8D3BC31A263E6F6100691327 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = HouseMarketUnitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Sahey.HouseMarketUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HouseMarket.app/HouseMarket";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -336,6 +486,15 @@
 			buildConfigurations = (
 				8D320EFC263E631F00B0E0E9 /* Debug */,
 				8D320EFD263E631F00B0E0E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8D3BC318263E6F6100691327 /* Build configuration list for PBXNativeTarget "HouseMarketUnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8D3BC319263E6F6100691327 /* Debug */,
+				8D3BC31A263E6F6100691327 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
