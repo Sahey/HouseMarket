@@ -112,7 +112,7 @@ extension PropertyListViewController: UICollectionViewDataSource, UICollectionVi
             propertyCell.view.configure(
                 viewModel: PropertyViewModel(
                     id: 1,
-                    imageUrl: nil,
+                    imageUrl: URL(string: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Hus_i_svarttorp.jpg/800px-Hus_i_svarttorp.jpg"),
                     isPremium: indexPath.row % 2 == 0,
                     address: "Mockvägen 1",
                     municipality: "Gällivare kommun",
@@ -129,7 +129,7 @@ extension PropertyListViewController: UICollectionViewDataSource, UICollectionVi
                     title: "Omrade",
                     city: "Stockholm",
                     rating: "Betyg: 4.5/5",
-                    imageUrl: nil,
+                    imageUrl: URL(string: "https://i.imgur.com/v6GDnCG.png"),
                     averagePrice: "Snittpris: 20 014 kr/m"
                 )
             )

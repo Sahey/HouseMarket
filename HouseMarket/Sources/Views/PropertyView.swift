@@ -6,11 +6,12 @@
 //
 
 import UIKit
+import Kingfisher
 
 struct PropertyViewModel {
     let id: Int
 
-    let imageUrl: String?
+    let imageUrl: URL?
     let isPremium: Bool
     let address: String
     let municipality: String
@@ -28,6 +29,8 @@ class PropertyView: UIView {
         imageView.backgroundColor = .gray
         imageView.contentMode = .scaleAspectFill
         imageView.layer.cornerRadius = 6
+        imageView.clipsToBounds = true
+        imageView.setContentCompressionResistancePriority(.defaultHigh, for: .vertical)
         return imageView
     }()
 
@@ -35,6 +38,7 @@ class PropertyView: UIView {
         let addressLabel = UILabel()
         addressLabel.font = .design(.header(style: .h3))
         addressLabel.textColor = .design(.text(style: .primary))
+        addressLabel.setContentCompressionResistancePriority(.defaultHigh + 3, for: .vertical)
         return addressLabel
     }()
 
@@ -52,6 +56,7 @@ class PropertyView: UIView {
         let municipalityLabel = UILabel()
         municipalityLabel.font = .design(.paragraph(style: .p2))
         municipalityLabel.textColor = .design(.text(style: .secondary))
+        municipalityLabel.setContentCompressionResistancePriority(.defaultHigh + 2, for: .vertical)
         return municipalityLabel
     }()
 
@@ -59,6 +64,9 @@ class PropertyView: UIView {
         let detailsLabel = UILabel()
         detailsLabel.font = .design(.paragraph(style: .p2))
         detailsLabel.textColor = .design(.text(style: .primary))
+        detailsLabel.setContentCompressionResistancePriority(.defaultHigh + 1, for: .vertical)
+        detailsLabel.setContentCompressionResistancePriority(.defaultHigh - 1, for: .horizontal)
+        detailsLabel.setContentHuggingPriority(.defaultLow + 1, for: .horizontal)
         return detailsLabel
     }()
 
@@ -67,6 +75,7 @@ class PropertyView: UIView {
         timeLabel.font = .design(.paragraph(style: .p2))
         timeLabel.textColor = .design(.text(style: .primary))
         timeLabel.setContentCompressionResistancePriority(.defaultHigh + 1, for: .horizontal)
+        timeLabel.setContentHuggingPriority(.defaultLow + 2, for: .horizontal)
         return timeLabel
     }()
 
@@ -116,6 +125,7 @@ class PropertyView: UIView {
             imageView.layer.borderWidth = 0
             imageView.layer.borderColor = nil
         }
+        imageView.kf.setImage(with: viewModel.imageUrl)
     }
 }
 

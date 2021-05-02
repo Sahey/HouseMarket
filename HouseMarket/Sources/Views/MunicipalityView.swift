@@ -5,7 +5,7 @@
 //  Created by Sahey Ignatyev on 02.05.2021.
 //
 
-import MapKit
+import Kingfisher
 import UIKit
 
 struct MunicipalityViewModel {
@@ -14,7 +14,7 @@ struct MunicipalityViewModel {
     let title: String
     let city: String
     let rating: String
-    let imageUrl: String?
+    let imageUrl: URL?
     let averagePrice: String
 }
 
@@ -23,6 +23,7 @@ final class MunicipalityView: UIView {
         let titleLabel = UILabel()
         titleLabel.font = .design(.header(style: .h1))
         titleLabel.textColor = .design(.text(style: .primary))
+        titleLabel.setContentCompressionResistancePriority(.defaultHigh + 4, for: .vertical)
         return titleLabel
     }()
 
@@ -31,6 +32,8 @@ final class MunicipalityView: UIView {
         areaImageView.backgroundColor = .gray
         areaImageView.contentMode = .scaleAspectFill
         areaImageView.layer.cornerRadius = 6
+        areaImageView.clipsToBounds = true
+        areaImageView.setContentCompressionResistancePriority(.defaultHigh, for: .vertical)
         return areaImageView
     }()
 
@@ -38,6 +41,7 @@ final class MunicipalityView: UIView {
         let cityLabel = UILabel()
         cityLabel.font = .design(.header(style: .h2))
         cityLabel.textColor = .design(.text(style: .primary))
+        cityLabel.setContentCompressionResistancePriority(.defaultHigh + 3, for: .vertical)
         return cityLabel
     }()
 
@@ -45,6 +49,7 @@ final class MunicipalityView: UIView {
         let ratingLabel = UILabel()
         ratingLabel.font = .design(.paragraph(style: .p1))
         ratingLabel.textColor = .design(.text(style: .primary))
+        ratingLabel.setContentCompressionResistancePriority(.defaultHigh + 2, for: .vertical)
         return ratingLabel
     }()
 
@@ -52,6 +57,7 @@ final class MunicipalityView: UIView {
         let averagePriceLabel = UILabel()
         averagePriceLabel.font = .design(.paragraph(style: .p1))
         averagePriceLabel.textColor = .design(.text(style: .primary))
+        averagePriceLabel.setContentCompressionResistancePriority(.defaultHigh + 1, for: .vertical)
         return averagePriceLabel
     }()
 
@@ -90,5 +96,6 @@ final class MunicipalityView: UIView {
         cityLabel.text = viewModel.city
         ratingLabel.text = viewModel.rating
         averagePriceLabel.text = viewModel.averagePrice
+        areaImageView.kf.setImage(with: viewModel.imageUrl)
     }
 }
