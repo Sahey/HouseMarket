@@ -116,8 +116,8 @@ extension PropertyListViewController: UICollectionViewDataSource, UICollectionVi
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch cells[indexPath.row] {
-        case .property:
-            interactor.request(request: .property(id: 1))
+        case let .property(viewModel):
+            interactor.request(request: .property(id: viewModel.id))
         case .municipality:
             break
         }

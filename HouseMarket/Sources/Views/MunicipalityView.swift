@@ -9,7 +9,7 @@ import Kingfisher
 import UIKit
 
 struct MunicipalityViewModel {
-    let id: Int
+    let id: String
 
     let title: String
     let city: String

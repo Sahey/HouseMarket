@@ -7,7 +7,7 @@
 
 enum PropertyList {
     enum Request {
-        case property(id: Int)
+        case property(id: String)
         case reload
     }
 

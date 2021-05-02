@@ -20,6 +20,15 @@
 		8D029B7A263EA15E00D600DF /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D029B79263EA15E00D600DF /* URL+Extension.swift */; };
 		8D029B7E263EA99900D600DF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8D029B7D263EA99900D600DF /* Localizable.strings */; };
 		8D029B82263EAB0400D600DF /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 8D029B81263EAB0400D600DF /* Localizable.stringsdict */; };
+		8D029B86263EB1E700D600DF /* PropertyListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D029B85263EB1E700D600DF /* PropertyListRouter.swift */; };
+		8D029B8B263EB36A00D600DF /* PropertyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D029B8A263EB36A00D600DF /* PropertyDetailViewController.swift */; };
+		8D029B91263EB3BE00D600DF /* PropertyDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D029B90263EB3BE00D600DF /* PropertyDetailInteractor.swift */; };
+		8D029B95263EB3D600D600DF /* PropertyDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D029B94263EB3D600D600DF /* PropertyDetailPresenter.swift */; };
+		8D029B99263EB3E400D600DF /* PropertyDetailBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D029B98263EB3E400D600DF /* PropertyDetailBuilder.swift */; };
+		8D029B9D263EB3F100D600DF /* PropertyDetailAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D029B9C263EB3F100D600DF /* PropertyDetailAssembly.swift */; };
+		8D029BA1263EB3F900D600DF /* PropertyDetailModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D029BA0263EB3F900D600DF /* PropertyDetailModels.swift */; };
+		8D029BA7263EB71C00D600DF /* PropertyMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D029BA6263EB71C00D600DF /* PropertyMapper.swift */; };
+		8D029BAD263EB7BD00D600DF /* PropertyMapperAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D029BAC263EB7BD00D600DF /* PropertyMapperAssembly.swift */; };
 		8D097EDE263E708600DF27FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D320EF3263E631F00B0E0E9 /* Assets.xcassets */; };
 		8D097EE3263E725F00DF27FA /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D097EE2263E725F00DF27FA /* CollectionCell.swift */; };
 		8D097EED263E75FC00DF27FA /* PropertyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D097EEC263E75FC00DF27FA /* PropertyView.swift */; };
@@ -60,6 +69,15 @@
 		8D029B79263EA15E00D600DF /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
 		8D029B7D263EA99900D600DF /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		8D029B81263EAB0400D600DF /* Localizable.stringsdict */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; path = Localizable.stringsdict; sourceTree = "<group>"; };
+		8D029B85263EB1E700D600DF /* PropertyListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyListRouter.swift; sourceTree = "<group>"; };
+		8D029B8A263EB36A00D600DF /* PropertyDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyDetailViewController.swift; sourceTree = "<group>"; };
+		8D029B90263EB3BE00D600DF /* PropertyDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyDetailInteractor.swift; sourceTree = "<group>"; };
+		8D029B94263EB3D600D600DF /* PropertyDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyDetailPresenter.swift; sourceTree = "<group>"; };
+		8D029B98263EB3E400D600DF /* PropertyDetailBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyDetailBuilder.swift; sourceTree = "<group>"; };
+		8D029B9C263EB3F100D600DF /* PropertyDetailAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyDetailAssembly.swift; sourceTree = "<group>"; };
+		8D029BA0263EB3F900D600DF /* PropertyDetailModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyDetailModels.swift; sourceTree = "<group>"; };
+		8D029BA6263EB71C00D600DF /* PropertyMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyMapper.swift; sourceTree = "<group>"; };
+		8D029BAC263EB7BD00D600DF /* PropertyMapperAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyMapperAssembly.swift; sourceTree = "<group>"; };
 		8D097EE2263E725F00DF27FA /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
 		8D097EEC263E75FC00DF27FA /* PropertyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyView.swift; sourceTree = "<group>"; };
 		8D097EF3263E792D00DF27FA /* DesignText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignText.swift; sourceTree = "<group>"; };
@@ -116,6 +134,36 @@
 				8D029B6D263E979300D600DF /* PropertySearchModels.swift */,
 			);
 			path = PropertySearch;
+			sourceTree = "<group>";
+		};
+		8D029B89263EB35500D600DF /* PropertyDetail */ = {
+			isa = PBXGroup;
+			children = (
+				8D029B8A263EB36A00D600DF /* PropertyDetailViewController.swift */,
+				8D029B90263EB3BE00D600DF /* PropertyDetailInteractor.swift */,
+				8D029B94263EB3D600D600DF /* PropertyDetailPresenter.swift */,
+				8D029B98263EB3E400D600DF /* PropertyDetailBuilder.swift */,
+				8D029B9C263EB3F100D600DF /* PropertyDetailAssembly.swift */,
+				8D029BA0263EB3F900D600DF /* PropertyDetailModels.swift */,
+			);
+			path = PropertyDetail;
+			sourceTree = "<group>";
+		};
+		8D029BA4263EB6E200D600DF /* Mappers */ = {
+			isa = PBXGroup;
+			children = (
+				8D029BA5263EB70C00D600DF /* Property */,
+			);
+			path = Mappers;
+			sourceTree = "<group>";
+		};
+		8D029BA5263EB70C00D600DF /* Property */ = {
+			isa = PBXGroup;
+			children = (
+				8D029BA6263EB71C00D600DF /* PropertyMapper.swift */,
+				8D029BAC263EB7BD00D600DF /* PropertyMapperAssembly.swift */,
+			);
+			path = Property;
 			sourceTree = "<group>";
 		};
 		8D097EE1263E725200DF27FA /* Views */ = {
@@ -185,6 +233,7 @@
 				8D097EFB263E832F00DF27FA /* Utils */,
 				8D3BC304263E69BF00691327 /* DesignSystem */,
 				8D320F03263E63A000B0E0E9 /* Modules */,
+				8D029BA4263EB6E200D600DF /* Mappers */,
 				8D029B5F263E96C300D600DF /* Services */,
 			);
 			path = Sources;
@@ -193,6 +242,7 @@
 		8D320F03263E63A000B0E0E9 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				8D029B89263EB35500D600DF /* PropertyDetail */,
 				8D3BC2FF263E65D500691327 /* PropertyList */,
 			);
 			path = Modules;
@@ -207,6 +257,7 @@
 				8D029B57263E921800D600DF /* PropertyListBuilder.swift */,
 				8D029B5B263E92A600D600DF /* PropertyListAssembly.swift */,
 				8D029B75263E9DBF00D600DF /* PropertyListModels.swift */,
+				8D029B85263EB1E700D600DF /* PropertyListRouter.swift */,
 			);
 			path = PropertyList;
 			sourceTree = "<group>";
@@ -351,22 +402,31 @@
 			files = (
 				8D029B5C263E92A600D600DF /* PropertyListAssembly.swift in Sources */,
 				8D097F07263E871500DF27FA /* MunicipalityView.swift in Sources */,
+				8D029B91263EB3BE00D600DF /* PropertyDetailInteractor.swift in Sources */,
 				8D029B6A263E976900D600DF /* PropertySearchAssembly.swift in Sources */,
 				8D3BC30A263E6AD000691327 /* UIKit+DesignColor.swift in Sources */,
 				8D097EFD263E833C00DF27FA /* Array+Extension.swift in Sources */,
+				8D029B86263EB1E700D600DF /* PropertyListRouter.swift in Sources */,
 				8D097EF8263E79E700DF27FA /* UIKit+DesignText.swift in Sources */,
+				8D029B9D263EB3F100D600DF /* PropertyDetailAssembly.swift in Sources */,
 				8D029B76263E9DBF00D600DF /* PropertyListModels.swift in Sources */,
 				8D029B61263E974600D600DF /* PropertySearchService.swift in Sources */,
+				8D029BA7263EB71C00D600DF /* PropertyMapper.swift in Sources */,
 				8D029B50263E916B00D600DF /* PropertyListInteractor.swift in Sources */,
 				8D097EF4263E792D00DF27FA /* DesignText.swift in Sources */,
 				8D3BC307263E69DC00691327 /* DesignColor.swift in Sources */,
+				8D029B99263EB3E400D600DF /* PropertyDetailBuilder.swift in Sources */,
 				8D029B7A263EA15E00D600DF /* URL+Extension.swift in Sources */,
+				8D029BAD263EB7BD00D600DF /* PropertyMapperAssembly.swift in Sources */,
 				8D029B54263E91C400D600DF /* PropertyListPresenter.swift in Sources */,
 				8D320EEB263E631F00B0E0E9 /* AppDelegate.swift in Sources */,
 				8D097EED263E75FC00DF27FA /* PropertyView.swift in Sources */,
 				8D3BC301263E662B00691327 /* PropertyListViewController.swift in Sources */,
 				8D097EE3263E725F00DF27FA /* CollectionCell.swift in Sources */,
+				8D029BA1263EB3F900D600DF /* PropertyDetailModels.swift in Sources */,
 				8D029B6E263E979300D600DF /* PropertySearchModels.swift in Sources */,
+				8D029B8B263EB36A00D600DF /* PropertyDetailViewController.swift in Sources */,
+				8D029B95263EB3D600D600DF /* PropertyDetailPresenter.swift in Sources */,
 				8D029B58263E921800D600DF /* PropertyListBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,7 +9,7 @@ import UIKit
 import Kingfisher
 
 struct PropertyViewModel {
-    let id: Int
+    let id: String
 
     let imageUrl: URL?
     let isPremium: Bool

@@ -13,6 +13,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     private let assembler = Assembler([
         PropertySearchAssembly(),
+        PropertyMapperAssembly(),
+        PropertyDetailAssembly(),
         PropertyListAssembly()
     ])
 
@@ -27,6 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func applyStyle() {
         let navigationBarAppearace = UINavigationBar.appearance()
         navigationBarAppearace.barTintColor = .design(.constant(style: .brand))
+        navigationBarAppearace.tintColor = .design(.text(style: .primaryReversed))
         navigationBarAppearace.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.design(.text(style: .primaryReversed))]
     }
 
