@@ -44,8 +44,10 @@ final class PropertyListInteractor: PropertyListInteractorProtocol {
     }
 
     func loadData() {
+        presenter.present(isLoading: true)
         service.fetch(request: PropertySearch.Request()) { [weak self] result in
             guard let self = self else { return }
+            self.presenter.present(isLoading: false)
             switch result {
             case let .success(response):
                 self.buffer(response)

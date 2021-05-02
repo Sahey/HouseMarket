@@ -9,6 +9,7 @@ import UIKit
 
 protocol PropertyListViewControllerProtocol: AnyObject {
     func show(viewModel: PropertyList.ViewModel)
+    func show(isLoading: Bool)
 }
 
 final class PropertyListViewController: UIViewController {
@@ -18,7 +19,8 @@ final class PropertyListViewController: UIViewController {
 
     private var flowLayout: UICollectionViewFlowLayout!
     private var collectionView: UICollectionView!
-    private let refreshControl = UIRefreshControl()
+    private var refreshControl: UIRefreshControl!
+    private var activityIndicator: UIActivityIndicatorView!
 
     private let interactor: PropertyListInteractorProtocol
 
@@ -65,8 +67,15 @@ final class PropertyListViewController: UIViewController {
         collectionView.register(PropertyCell.self, forCellWithReuseIdentifier: "PropertyCell")
         collectionView.register(MunicipalityCell.self, forCellWithReuseIdentifier: "MunicipalityCell")
 
+        refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(didPull), for: .valueChanged)
         collectionView.addSubview(refreshControl)
+
+        activityIndicator = UIActivityIndicatorView(frame: view.bounds)
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        activityIndicator.isUserInteractionEnabled = false
+        view.addSubview(activityIndicator)
     }
 
     private func showAlert(viewModel: ViewModel.Alert) {
@@ -132,6 +141,14 @@ extension PropertyListViewController: PropertyListViewControllerProtocol {
             collectionView.reloadData()
         case let .failure(alert):
             showAlert(viewModel: alert)
+        }
+    }
+
+    func show(isLoading: Bool) {
+        if isLoading {
+            activityIndicator.startAnimating()
+        } else {
+            activityIndicator.stopAnimating()
         }
     }
 }

@@ -9,6 +9,7 @@ import Foundation
 
 protocol PropertyListPresenterProtocol {
     func present(data: PropertyList.Data)
+    func present(isLoading: Bool)
     func present(error: Error)
 }
 
@@ -67,6 +68,12 @@ final class PropertyListPresenter: PropertyListPresenterProtocol {
         )
         DispatchQueue.main.async {
             self.viewController?.show(viewModel: .failure(alert: viewModel))
+        }
+    }
+
+    func present(isLoading: Bool) {
+        DispatchQueue.main.async {
+            self.viewController?.show(isLoading: isLoading)
         }
     }
 }
