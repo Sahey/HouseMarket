@@ -7,17 +7,31 @@
 
 protocol PropertyListInteractorProtocol {
     func loadData()
-    func didSelect(property id: Int)
+    func didSelect(property request: PropertyList.Request)
 }
 
-final class MockPropertyListInteractor: PropertyListInteractorProtocol {
+final class PropertyListInteractor: PropertyListInteractorProtocol {
     private let presenter: PropertyListPresenterProtocol
+    private let service: PropertySearchServiceProtocol
 
-    init(presenter: PropertyListPresenterProtocol) {
+    init(presenter: PropertyListPresenterProtocol, service: PropertySearchServiceProtocol) {
         self.presenter = presenter
+        self.service = service
     }
 
-    func loadData() {}
+    func loadData() {
+        service.fetch(request: PropertySearch.Request()) { [weak self] result in
+            switch result {
+            case let .success(response):
+                self?.presenter.present(data: response)
+            case let .failure(error):
+                ()
+            }
+            print(result)
+        }
+    }
 
-    func didSelect(property id: Int) {}
+    func didSelect(property request: PropertyList.Request) {
+        
+    }
 }

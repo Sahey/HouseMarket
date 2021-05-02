@@ -12,9 +12,18 @@ protocol PropertyListBuilderProtocol {
 }
 
 final class PropertyListBuilder: PropertyListBuilderProtocol {
+    private let service: PropertySearchServiceProtocol
+
+    init(service: PropertySearchServiceProtocol) {
+        self.service = service
+    }
+
     func build() -> UIViewController {
         let presenter = PropertyListPresenter()
-        let interactor = MockPropertyListInteractor(presenter: presenter)
+        let interactor = PropertyListInteractor(
+            presenter: presenter,
+            service: service
+        )
         let viewController = PropertyListViewController(interactor: interactor)
         presenter.viewController = viewController
         return viewController

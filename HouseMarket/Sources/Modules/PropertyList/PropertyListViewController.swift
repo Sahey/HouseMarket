@@ -7,16 +7,21 @@
 
 import UIKit
 
-protocol PropertyListViewControllerProtocol: AnyObject {}
+protocol PropertyListViewControllerProtocol: AnyObject {
+    func show(viewModel: PropertyList.ViewModel)
+}
 
 final class PropertyListViewController: UIViewController {
+    private typealias PropertyCell = CollectionCell<PropertyView>
+    private typealias MunicipalityCell = CollectionCell<MunicipalityView>
+    private typealias ViewModel = PropertyList.ViewModel
+
     private var flowLayout: UICollectionViewFlowLayout!
     private var collectionView: UICollectionView!
 
-    private typealias PropertyCell = CollectionCell<PropertyView>
-    private typealias MunicipalityCell = CollectionCell<MunicipalityView>
-
     private let interactor: PropertyListInteractorProtocol
+
+    private var cells = [ViewModel.Cell]()
 
     init(interactor: PropertyListInteractorProtocol) {
         self.interactor = interactor
@@ -63,64 +68,45 @@ final class PropertyListViewController: UIViewController {
 
 extension PropertyListViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if indexPath.row % 3 == 0 {
-            return CGSize(
-                width: collectionView.bounds.inset(by: collectionView.layoutMargins).size.width,
-                height: 230
-            )
-        } else {
-            return CGSize(
-                width: collectionView.bounds.inset(by: collectionView.layoutMargins).size.width,
-                height: 180
-            )
-        }
+        CGSize(
+            width: collectionView.bounds.inset(by: collectionView.layoutMargins).size.width,
+            height: cells[indexPath.row].cellHeight
+        )
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        cells.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let viewModel = cells[indexPath.row]
         let cell: UICollectionViewCell
-
-        if indexPath.row % 3 == 0 {
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MunicipalityCell", for: indexPath)
-        } else {
+        switch viewModel {
+        case let .property(viewModel):
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PropertyCell", for: indexPath)
+            (cell as? PropertyCell)?.view.configure(viewModel: viewModel)
+        case let .municipality(viewModel):
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MunicipalityCell", for: indexPath)
+            (cell as? MunicipalityCell)?.view.configure(viewModel: viewModel)
         }
-
-        switch cell {
-        case let propertyCell as PropertyCell:
-            propertyCell.view.configure(
-                viewModel: PropertyViewModel(
-                    id: 1,
-                    imageUrl: URL(string: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Hus_i_svarttorp.jpg/800px-Hus_i_svarttorp.jpg"),
-                    isPremium: indexPath.row % 2 == 0,
-                    address: "Mockvägen 1",
-                    municipality: "Gällivare kommun",
-                    price: "2 650 000 kr",
-                    livingArea: "49,5 m",
-                    numberOfRooms: "2 rum",
-                    daysPosted: "1 dagar"
-                )
-            )
-        case let municipalityCell as MunicipalityCell:
-            municipalityCell.view.configure(
-                viewModel: MunicipalityViewModel(
-                    id: 1,
-                    title: "Omrade",
-                    city: "Stockholm",
-                    rating: "Betyg: 4.5/5",
-                    imageUrl: URL(string: "https://i.imgur.com/v6GDnCG.png"),
-                    averagePrice: "Snittpris: 20 014 kr/m"
-                )
-            )
-        default:
-            fatalError("Unexpected cell type")
-        }
-
         return cell
     }
 }
 
-extension PropertyListViewController: PropertyListViewControllerProtocol {}
+extension PropertyListViewController: PropertyListViewControllerProtocol {
+    func show(viewModel: PropertyList.ViewModel) {
+        cells = viewModel.cells
+        collectionView.reloadData()
+    }
+}
+
+private extension PropertyList.ViewModel.Cell {
+    var cellHeight: CGFloat {
+        switch self {
+        case .property:
+            return 180
+        case .municipality:
+            return 230
+        }
+    }
+}

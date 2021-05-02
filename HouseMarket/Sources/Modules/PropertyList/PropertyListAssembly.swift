@@ -9,8 +9,10 @@ import Swinject
 
 final class PropertyListAssembly: Assembly {
     func assemble(container: Container) {
-        container.register(PropertyListBuilderProtocol.self) { _ in
-            PropertyListBuilder()
+        container.register(PropertyListBuilderProtocol.self) { resolver in
+            PropertyListBuilder(
+                service: resolver.resolve(PropertySearchServiceProtocol.self)!
+            )
         }
     }
 }

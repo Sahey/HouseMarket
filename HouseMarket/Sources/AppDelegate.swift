@@ -12,6 +12,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     private let assembler = Assembler([
+        PropertySearchAssembly(),
         PropertyListAssembly()
     ])
 
