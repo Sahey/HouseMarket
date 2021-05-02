@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D029B4C263E913E00D600DF /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 8D029B4B263E913E00D600DF /* Swinject */; };
+		8D029B50263E916B00D600DF /* PropertyListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D029B4F263E916B00D600DF /* PropertyListInteractor.swift */; };
+		8D029B54263E91C400D600DF /* PropertyListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D029B53263E91C400D600DF /* PropertyListPresenter.swift */; };
+		8D029B58263E921800D600DF /* PropertyListBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D029B57263E921800D600DF /* PropertyListBuilder.swift */; };
+		8D029B5C263E92A600D600DF /* PropertyListAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D029B5B263E92A600D600DF /* PropertyListAssembly.swift */; };
 		8D097EDE263E708600DF27FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D320EF3263E631F00B0E0E9 /* Assets.xcassets */; };
 		8D097EE3263E725F00DF27FA /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D097EE2263E725F00DF27FA /* CollectionCell.swift */; };
 		8D097EED263E75FC00DF27FA /* PropertyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D097EEC263E75FC00DF27FA /* PropertyView.swift */; };
@@ -35,6 +40,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8D029B4F263E916B00D600DF /* PropertyListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyListInteractor.swift; sourceTree = "<group>"; };
+		8D029B53263E91C400D600DF /* PropertyListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyListPresenter.swift; sourceTree = "<group>"; };
+		8D029B57263E921800D600DF /* PropertyListBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyListBuilder.swift; sourceTree = "<group>"; };
+		8D029B5B263E92A600D600DF /* PropertyListAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyListAssembly.swift; sourceTree = "<group>"; };
 		8D097EE2263E725F00DF27FA /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
 		8D097EEC263E75FC00DF27FA /* PropertyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyView.swift; sourceTree = "<group>"; };
 		8D097EF3263E792D00DF27FA /* DesignText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignText.swift; sourceTree = "<group>"; };
@@ -60,6 +69,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D097F10263E8DC000DF27FA /* Kingfisher in Frameworks */,
+				8D029B4C263E913E00D600DF /* Swinject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,6 +163,10 @@
 			isa = PBXGroup;
 			children = (
 				8D3BC300263E662B00691327 /* PropertyListViewController.swift */,
+				8D029B4F263E916B00D600DF /* PropertyListInteractor.swift */,
+				8D029B53263E91C400D600DF /* PropertyListPresenter.swift */,
+				8D029B57263E921800D600DF /* PropertyListBuilder.swift */,
+				8D029B5B263E92A600D600DF /* PropertyListAssembly.swift */,
 			);
 			path = PropertyList;
 			sourceTree = "<group>";
@@ -202,6 +216,7 @@
 			name = HouseMarket;
 			packageProductDependencies = (
 				8D097F0F263E8DC000DF27FA /* Kingfisher */,
+				8D029B4B263E913E00D600DF /* Swinject */,
 			);
 			productName = HouseMarket;
 			productReference = 8D320EE7263E631F00B0E0E9 /* HouseMarket.app */;
@@ -254,6 +269,7 @@
 			mainGroup = 8D320EDE263E631F00B0E0E9;
 			packageReferences = (
 				8D097F0E263E8DC000DF27FA /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				8D029B4A263E913E00D600DF /* XCRemoteSwiftPackageReference "Swinject" */,
 			);
 			productRefGroup = 8D320EE8263E631F00B0E0E9 /* Products */;
 			projectDirPath = "";
@@ -290,16 +306,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D029B5C263E92A600D600DF /* PropertyListAssembly.swift in Sources */,
 				8D097F07263E871500DF27FA /* MunicipalityView.swift in Sources */,
 				8D3BC30A263E6AD000691327 /* UIKit+DesignColor.swift in Sources */,
 				8D097EFD263E833C00DF27FA /* Array+Extension.swift in Sources */,
 				8D097EF8263E79E700DF27FA /* UIKit+DesignText.swift in Sources */,
+				8D029B50263E916B00D600DF /* PropertyListInteractor.swift in Sources */,
 				8D097EF4263E792D00DF27FA /* DesignText.swift in Sources */,
 				8D3BC307263E69DC00691327 /* DesignColor.swift in Sources */,
+				8D029B54263E91C400D600DF /* PropertyListPresenter.swift in Sources */,
 				8D320EEB263E631F00B0E0E9 /* AppDelegate.swift in Sources */,
 				8D097EED263E75FC00DF27FA /* PropertyView.swift in Sources */,
 				8D3BC301263E662B00691327 /* PropertyListViewController.swift in Sources */,
 				8D097EE3263E725F00DF27FA /* CollectionCell.swift in Sources */,
+				8D029B58263E921800D600DF /* PropertyListBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -558,6 +578,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		8D029B4A263E913E00D600DF /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.7.1;
+			};
+		};
 		8D097F0E263E8DC000DF27FA /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
@@ -569,6 +597,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		8D029B4B263E913E00D600DF /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8D029B4A263E913E00D600DF /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
+		};
 		8D097F0F263E8DC000DF27FA /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8D097F0E263E8DC000DF27FA /* XCRemoteSwiftPackageReference "Kingfisher" */;

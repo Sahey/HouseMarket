@@ -7,39 +7,7 @@
 
 import UIKit
 
-final class ColumnFlowLayout: UICollectionViewFlowLayout {
-    private let height: CGFloat
-
-    init(height: CGFloat) {
-        self.height = height
-        super.init()
-    }
-
-    @available(*, unavailable)
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-    override func prepare() {
-        super.prepare()
-        guard let collectionView = collectionView else {
-            return
-        }
-        itemSize = CGSize(
-            width: collectionView.bounds.inset(by: collectionView.layoutMargins).size.width,
-            height: height
-        )
-
-        sectionInset = UIEdgeInsets(
-            top: minimumInteritemSpacing,
-            left: 0,
-            bottom: 0,
-            right: 0
-        )
-
-        sectionInsetReference = .fromSafeArea
-    }
-}
+protocol PropertyListViewControllerProtocol: AnyObject {}
 
 final class PropertyListViewController: UIViewController {
     private var flowLayout: UICollectionViewFlowLayout!
@@ -48,12 +16,26 @@ final class PropertyListViewController: UIViewController {
     private typealias PropertyCell = CollectionCell<PropertyView>
     private typealias MunicipalityCell = CollectionCell<MunicipalityView>
 
+    private let interactor: PropertyListInteractorProtocol
+
+    init(interactor: PropertyListInteractorProtocol) {
+        self.interactor = interactor
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        interactor.loadData()
     }
 
     private func setup() {
+        title = "Sök bostad"
         view.backgroundColor = .design(.background(style: .primary))
         flowLayout = UICollectionViewFlowLayout()
         flowLayout.minimumLineSpacing = 20
@@ -140,3 +122,5 @@ extension PropertyListViewController: UICollectionViewDataSource, UICollectionVi
         return cell
     }
 }
+
+extension PropertyListViewController: PropertyListViewControllerProtocol {}
