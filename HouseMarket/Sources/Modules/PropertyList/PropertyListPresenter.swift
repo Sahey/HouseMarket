@@ -17,6 +17,19 @@ final class PropertyListPresenter: PropertyListPresenterProtocol {
     typealias CellViewModel = PropertyList.ViewModel.Cell
     typealias AlertViewModel = PropertyList.ViewModel.Alert
 
+    private let numberFormatter: NumberFormatter = {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.minimumFractionDigits = 0
+        numberFormatter.maximumFractionDigits = 2
+        return numberFormatter
+    }()
+
+    private let measurementFormatter: MeasurementFormatter = {
+        let measurementFormatter = MeasurementFormatter()
+
+        return measurementFormatter
+    }()
+
     weak var viewController: PropertyListViewControllerProtocol?
 
     private func toViewModle(property: Data.Property, isHighlighted: Bool) -> PropertyViewModel {
@@ -27,20 +40,36 @@ final class PropertyListPresenter: PropertyListPresenterProtocol {
             address: property.streetAddress,
             municipality: property.municipality,
             price: property.askingPrice,
-            livingArea: "\(property.livingArea)",
-            numberOfRooms: "\(property.numberOfRooms)",
-            daysPosted: "\(property.daysOnHemnet)"
+            livingArea: pretify(squareMetres: property.livingArea),
+            numberOfRooms: String(format: NSLocalizedString("PROPERTY_LIST_ROOMS", comment: ""), pretify(double: property.numberOfRooms)),
+            daysPosted: pretify(days: property.daysOnHemnet)
         )
+    }
+
+    private func pretify(squareMetres: Double) -> String {
+        let measurement = Measurement(value: squareMetres, unit: UnitArea.squareMeters)
+        return measurementFormatter.string(from: measurement)
+    }
+
+    private func pretify(days: Int) -> String {
+        let formatString: String = NSLocalizedString("REMAINING_DAY_PATTERN", comment: "")
+        let resultString = String.localizedStringWithFormat(formatString, days)
+        return resultString
+    }
+
+    private func pretify(double: Double) -> String {
+        let number = NSNumber(value: double)
+        return numberFormatter.string(from: number) ?? "\(double)"
     }
 
     private func toViewModle(area: Data.Area) -> MunicipalityViewModel {
         MunicipalityViewModel(
             id: 0,
-            title: "Område",
+            title: NSLocalizedString("PROPERTY_LIST_AREA", comment: ""),
             city: area.area,
-            rating: "Betyg: \(area.rating)",
+            rating: String(format: NSLocalizedString("PROPERTY_LIST_RATE", comment: ""), "\(area.rating)"),
             imageUrl: URL(string: area.image),
-            averagePrice: "Snittpris: \(area.averagePrice)"
+            averagePrice: String(format: NSLocalizedString("PROPERTY_LIST_AVERAGE_PRICE", comment: ""), "\(area.averagePrice)")
         )
     }
 

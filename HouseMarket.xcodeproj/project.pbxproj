@@ -18,6 +18,8 @@
 		8D029B72263E9B5600D600DF /* PropertySearch.json in Resources */ = {isa = PBXBuildFile; fileRef = 8D029B71263E9B5600D600DF /* PropertySearch.json */; };
 		8D029B76263E9DBF00D600DF /* PropertyListModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D029B75263E9DBF00D600DF /* PropertyListModels.swift */; };
 		8D029B7A263EA15E00D600DF /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D029B79263EA15E00D600DF /* URL+Extension.swift */; };
+		8D029B7E263EA99900D600DF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8D029B7D263EA99900D600DF /* Localizable.strings */; };
+		8D029B82263EAB0400D600DF /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 8D029B81263EAB0400D600DF /* Localizable.stringsdict */; };
 		8D097EDE263E708600DF27FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D320EF3263E631F00B0E0E9 /* Assets.xcassets */; };
 		8D097EE3263E725F00DF27FA /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D097EE2263E725F00DF27FA /* CollectionCell.swift */; };
 		8D097EED263E75FC00DF27FA /* PropertyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D097EEC263E75FC00DF27FA /* PropertyView.swift */; };
@@ -56,6 +58,8 @@
 		8D029B71263E9B5600D600DF /* PropertySearch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PropertySearch.json; sourceTree = "<group>"; };
 		8D029B75263E9DBF00D600DF /* PropertyListModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyListModels.swift; sourceTree = "<group>"; };
 		8D029B79263EA15E00D600DF /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
+		8D029B7D263EA99900D600DF /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		8D029B81263EAB0400D600DF /* Localizable.stringsdict */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; path = Localizable.stringsdict; sourceTree = "<group>"; };
 		8D097EE2263E725F00DF27FA /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
 		8D097EEC263E75FC00DF27FA /* PropertyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyView.swift; sourceTree = "<group>"; };
 		8D097EF3263E792D00DF27FA /* DesignText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignText.swift; sourceTree = "<group>"; };
@@ -167,6 +171,8 @@
 				8D320EF3263E631F00B0E0E9 /* Assets.xcassets */,
 				8D320EF5263E631F00B0E0E9 /* LaunchScreen.storyboard */,
 				8D320EF8263E631F00B0E0E9 /* Info.plist */,
+				8D029B7D263EA99900D600DF /* Localizable.strings */,
+				8D029B81263EAB0400D600DF /* Localizable.stringsdict */,
 			);
 			path = HouseMarket;
 			sourceTree = "<group>";
@@ -321,7 +327,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D320EF7263E631F00B0E0E9 /* LaunchScreen.storyboard in Resources */,
+				8D029B7E263EA99900D600DF /* Localizable.strings in Resources */,
 				8D320EF4263E631F00B0E0E9 /* Assets.xcassets in Resources */,
+				8D029B82263EAB0400D600DF /* Localizable.stringsdict in Resources */,
 				8D029B72263E9B5600D600DF /* PropertySearch.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

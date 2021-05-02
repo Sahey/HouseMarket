@@ -21,8 +21,8 @@
          "municipality":"Stockholm",
          "area":"Nedre Gärdet",
          "daysOnHemnet":10,
-         "livingArea":85,
-         "numberOfRooms":3,
+         "livingArea":85.7878768,
+         "numberOfRooms":3.5,
          "streetAddress":"Mockvägen 2",
          "image":"https://upload.wikimedia.org/wikipedia/commons/8/8f/Arkitekt_Peder_Magnussen_hus_H%C3%B8nefoss_HDR.jpg"
       },

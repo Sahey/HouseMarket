@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  HouseMarket
+
+  Created by Sahey Ignatyev on 02.05.2021.
+  
+*/
+
+"PROPERTY_LIST_TITLE" = "Search result";
+"PROPERTY_LIST_AREA" = "Area";
+"PROPERTY_LIST_RATE" = "Rating: %@";
+"PROPERTY_LIST_AVERAGE_PRICE" = "Average price: %@";
+"PROPERTY_LIST_ROOMS" = "%@ rooms";

@@ -41,7 +41,7 @@ final class PropertyListViewController: UIViewController {
     }
 
     private func setup() {
-        title = "Sök bostad"
+        title = NSLocalizedString("PROPERTY_LIST_TITLE", comment: "")
         view.backgroundColor = .design(.background(style: .primary))
         flowLayout = UICollectionViewFlowLayout()
         flowLayout.minimumLineSpacing = 20
