@@ -41,9 +41,26 @@ final class ColumnFlowLayout: UICollectionViewFlowLayout {
     }
 }
 
+final class SampleView: UIView {
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
+    }
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+
+    private func setup() {
+        backgroundColor = .blue
+    }
+}
+
 final class PropertyListViewController: UIViewController {
     private var flowLayout: ColumnFlowLayout!
     private var collectionView: UICollectionView!
+
+    private typealias Cell = CollectionCell<SampleView>
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,15 +78,18 @@ final class PropertyListViewController: UIViewController {
 
         collectionView.dataSource = self
         collectionView.delegate = self
+
+        collectionView.register(Cell.self, forCellWithReuseIdentifier: "Cell")
     }
 }
 
 extension PropertyListViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        return 10
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        UICollectionViewCell()
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
+        return cell
     }
 }
