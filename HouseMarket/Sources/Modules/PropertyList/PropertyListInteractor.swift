@@ -7,7 +7,7 @@
 
 protocol PropertyListInteractorProtocol {
     func loadData()
-    func didSelect(property request: PropertyList.Request)
+    func request(request: PropertyList.Request)
 }
 
 final class PropertyListInteractor: PropertyListInteractorProtocol {
@@ -25,13 +25,17 @@ final class PropertyListInteractor: PropertyListInteractorProtocol {
             case let .success(response):
                 self?.presenter.present(data: response)
             case let .failure(error):
-                ()
+                self?.presenter.present(error: error)
             }
             print(result)
         }
     }
 
-    func didSelect(property request: PropertyList.Request) {
-        
+    func request(request: PropertyList.Request) {
+        switch request {
+        case let .property(id): ()
+        case .reload:
+            loadData()
+        }
     }
 }

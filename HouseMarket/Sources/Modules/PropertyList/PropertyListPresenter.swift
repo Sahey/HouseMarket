@@ -9,11 +9,13 @@ import Foundation
 
 protocol PropertyListPresenterProtocol {
     func present(data: PropertyList.Data)
+    func present(error: Error)
 }
 
 final class PropertyListPresenter: PropertyListPresenterProtocol {
     typealias Data = PropertyList.Data
     typealias CellViewModel = PropertyList.ViewModel.Cell
+    typealias AlertViewModel = PropertyList.ViewModel.Alert
 
     weak var viewController: PropertyListViewControllerProtocol?
 
@@ -58,9 +60,21 @@ final class PropertyListPresenter: PropertyListPresenterProtocol {
 
     func present(data: PropertyList.Data) {
         let cellViewModels = data.items.map(toViewModel)
-        let viewModel = PropertyList.ViewModel(cells: cellViewModels)
+        let viewModel = PropertyList.ViewModel.data(cells: cellViewModels)
         DispatchQueue.main.async {
             self.viewController?.show(viewModel: viewModel)
+        }
+    }
+
+    func present(error: Error) {
+        let viewModel = AlertViewModel(
+            title: "Something went wrong",
+            message: error.localizedDescription,
+            retry: "Retry",
+            cancel: "Cancel"
+        )
+        DispatchQueue.main.async {
+            self.viewController?.show(viewModel: .failure(alert: viewModel))
         }
     }
 }

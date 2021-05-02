@@ -18,6 +18,7 @@ final class PropertyListViewController: UIViewController {
 
     private var flowLayout: UICollectionViewFlowLayout!
     private var collectionView: UICollectionView!
+    private let refreshControl = UIRefreshControl()
 
     private let interactor: PropertyListInteractorProtocol
 
@@ -63,6 +64,27 @@ final class PropertyListViewController: UIViewController {
 
         collectionView.register(PropertyCell.self, forCellWithReuseIdentifier: "PropertyCell")
         collectionView.register(MunicipalityCell.self, forCellWithReuseIdentifier: "MunicipalityCell")
+
+        refreshControl.addTarget(self, action: #selector(didPull), for: .valueChanged)
+        collectionView.addSubview(refreshControl)
+    }
+
+    private func showAlert(viewModel: ViewModel.Alert) {
+        let alert = UIAlertController(
+            title: viewModel.title,
+            message: viewModel.message,
+            preferredStyle: .alert
+        )
+        alert.addAction(UIAlertAction(title: viewModel.retry, style: .default, handler: { _ in
+            self.interactor.request(request: .reload)
+        }))
+        alert.addAction(UIAlertAction(title: viewModel.cancel, style: .cancel, handler: nil))
+        present(alert, animated: true)
+    }
+
+    @objc private func didPull() {
+        refreshControl.endRefreshing()
+        interactor.request(request: .reload)
     }
 }
 
@@ -91,12 +113,26 @@ extension PropertyListViewController: UICollectionViewDataSource, UICollectionVi
         }
         return cell
     }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch cells[indexPath.row] {
+        case .property:
+            interactor.request(request: .property(id: 1))
+        case .municipality:
+            break
+        }
+    }
 }
 
 extension PropertyListViewController: PropertyListViewControllerProtocol {
     func show(viewModel: PropertyList.ViewModel) {
-        cells = viewModel.cells
-        collectionView.reloadData()
+        switch viewModel {
+        case let .data(cells):
+            self.cells = cells
+            collectionView.reloadData()
+        case let .failure(alert):
+            showAlert(viewModel: alert)
+        }
     }
 }
 
